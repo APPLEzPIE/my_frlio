@@ -1,0 +1,51 @@
+ros_topic:
+  lidar: "/velodyne_points"
+  imu: "/imu/data"
+
+param_acc_value_scale: 1.0
+
+param_lidar_type: "LIDAR_TYPE_utbm_velodyne_HDL32E"
+param_detect_range: 200.0
+param_detect_blind: 1.0
+
+flg_extrinsic_bwtween_l_i_use_rot: true
+# extrinsic_rot_l_i: 
+# extrinsic_quat_l_i:  # 顺序 x y z w
+# extrinsic_trans_l_i: 
+# extrinsic_rot_l_i: [1, 0, 0,
+#                   0, 1, 0,
+#                   0, 0, 1]
+# extrinsic_quat_l_i: [ 0, 0, 0, 1] # 顺序 x y z w
+# extrinsic_trans_l_i: [ 0.04165, 0.02326, -0.0284]
+extrinsic_rot_i_l: [  1.0, 0,  0, 
+                   0,  1.0,  0, 
+                   0,  0,  1.0]
+# extrinsic_quat_i_l: [ 0.0, 0.0, 0.0, -1.0] # 顺序 x y z w
+extrinsic_trans_i_l: [-0.5, 1.4, 1.5]
+
+# imu_noise:
+#   acc_std: 0.03
+#   gyr_std: 0.03
+#   ba_std: 0.003
+#   bg_std: 0.003
+# imu_noise:
+#   acc_std: 0.05
+#   gyr_std: 0.05
+#   ba_std: 0.005
+#   bg_std: 0.005
+imu_noise:
+  acc_std: 0.3
+  gyr_std: 0.3
+  ba_std: 0.01
+  bg_std: 0.01
+# imu_noise:
+#   acc_std: 0.5
+#   gyr_std: 0.5
+#   ba_std: 0.05
+#   bg_std: 0.05
+# imu_noise:
+#   acc_std: 1
+#   gyr_std: 1
+#   ba_std: 0.1
+#   bg_std: 0.1
+

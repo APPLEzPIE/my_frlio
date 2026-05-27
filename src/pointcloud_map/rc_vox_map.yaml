@@ -1,0 +1,17 @@
+param_nearby_type: 18
+
+param_range_x: 120
+param_range_y: 120
+param_range_z: 80
+
+grid_resolution: 4.0
+voxel_resolution: 0.5
+point_resolution: 0.25
+
+param_grid_pool_increm_size: 1000
+param_voxel_pool_increm_size: 1000
+param_point_pool_increm_size: 1000
+
+param_reserve_grid_size: 50000
+param_reserve_voxel_size: 50000
+param_reserve_point_size: 50000

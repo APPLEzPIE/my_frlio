@@ -1,0 +1,64 @@
+ros_topic:
+  lidar: /os_cloud_node/points
+  imu: /os_cloud_node/imu
+  camera: "/alphasense_driver_ros/cam0/compressed"
+
+camera:
+  enable_colorize: false
+
+flg_cam_need_resize: false
+flg_cam_need_undistort: false
+flg_cam_need_equalize: false
+flg_cam_rgb_or_bgr_or_gray: 0
+
+cam_intrinsic_mat: [500.0, 0.0, 320.0, 0.0, 500.0, 240.0, 0.0, 0.0, 1.0]
+cam_dist_coeffs_vec: [0.0, 0.0, 0.0, 0.0, 0.0]
+cam_width: 640
+cam_height: 480
+param_td_cam_relative_imu: 0.0
+
+param_acc_value_scale: 1.0
+
+param_lidar_type: "LIDAR_TYPE_newercollege_ouster_OS1"
+param_detect_range: 200.0
+param_detect_blind: 1.0
+
+flg_extrinsic_bwtween_l_i_use_rot: true
+# extrinsic_rot_l_i:
+# extrinsic_quat_l_i:  # 顺序 x y z w
+# extrinsic_trans_l_i:
+# extrinsic_rot_l_i: [1, 0, 0,
+#                   0, 1, 0,
+#                   0, 0, 1]
+# extrinsic_quat_l_i: [ 0, 0, 0, 1] # 顺序 x y z w
+# extrinsic_trans_l_i: [ 0.04165, 0.02326, -0.0284]
+extrinsic_rot_i_l: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+# extrinsic_quat_i_l: [ 0.0, 0.0, 0.0, -1.0] # 顺序 x y z w
+extrinsic_trans_i_l: [0.014, -0.012, -0.015]
+
+# imu_noise:
+#   acc_std: 0.03
+#   gyr_std: 0.03
+#   ba_std: 0.003
+#   bg_std: 0.003
+# imu_noise:
+#   acc_std: 0.05
+#   gyr_std: 0.05
+#   ba_std: 0.005
+#   bg_std: 0.005
+imu_noise:
+  acc_std: 0.1
+  gyr_std: 0.1
+  ba_std: 0.01
+  bg_std: 0.03
+# imu_noise:
+#   acc_std: 0.5
+#   gyr_std: 0.5
+#   ba_std: 0.05
+#   bg_std: 0.05
+# imu_noise:
+#   acc_std: 1
+#   gyr_std: 1
+#   ba_std: 0.1
+#   bg_std: 0.1
+

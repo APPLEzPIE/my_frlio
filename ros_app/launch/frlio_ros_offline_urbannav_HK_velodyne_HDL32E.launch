@@ -1,0 +1,13 @@
+<launch>
+	<arg name="rviz" default="true" />
+	
+    <node pkg="frlio" type="frlio_ros_offline" name="frlio_ros_offline" 
+		args="	--bag_file /home/zas/UrbanNav-HK_Whampoa-20210521_sensors_filter.bag
+				--my_log_dir /home/zas/zas/new_proj/frlio/log/
+				--my_debug_dir /home/zas/zas/new_proj/frlio/debug/
+				--system_dir /home/zas/zas/new_proj/frlio/frlio/
+				--sensor_config_file /home/zas/zas/new_proj/frlio/config/urbannav_HK_velodyne_HDL32E.yaml" output="screen"/> 
+	<group if="$(arg rviz)">
+		<node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(dirname)/rviz_config.rviz" />
+	</group>
+</launch> 

@@ -1,0 +1,119 @@
+ros_topic:
+  lidar: "/os1_cloud_node1/points"
+  imu: "/imu/imu"
+  camera: "/left/image_raw"
+
+camera:
+  enable_colorize: false
+
+flg_cam_need_resize: false
+flg_cam_need_undistort: false
+flg_cam_need_equalize: false
+flg_cam_rgb_or_bgr_or_gray: 2
+
+cam_intrinsic_mat:
+  [
+    425.0258563372763,
+    0.0,
+    386.015186655088,
+    0.0,
+    426.7976260903337,
+    241.913033674344,
+    0.0,
+    0.0,
+    1.0,
+  ]
+cam_dist_coeffs_vec:
+  [
+    -0.288105327549552,
+    0.074578284234601,
+    0.0007784489598138802,
+    -0.0002277853975035461,
+    0.0,
+  ]
+cam_width: 752
+cam_height: 480
+
+flg_extrinsic_bwtween_l_c_use_rot: true
+extrinsic_rot_l_c:
+  [
+    0.02183084,
+    -0.01312053,
+    0.99967558,
+    0.99975965,
+    0.00230088,
+    -0.02180248,
+    -0.00201407,
+    0.99991127,
+    0.01316761,
+  ]
+extrinsic_trans_l_c: [0.05552943, -0.12431302, -0.03885314]
+
+flg_extrinsic_bwtween_c_i_use_rot: true
+extrinsic_rot_i_c:
+  [
+    0.02183084,
+    -0.01312053,
+    0.99967558,
+    0.99975965,
+    0.00230088,
+    -0.02180248,
+    -0.00201407,
+    0.99991127,
+    0.01316761,
+  ]
+extrinsic_trans_i_c: [0.00552943, -0.12431302, 0.01614686]
+
+param_td_cam_relative_imu: 0.0
+
+output:
+  save_keyframe_pcd: true
+  save_rgb_keyframe_pcd: false
+  save_pcd_dir: /home/apple-pie/SLAM/fr-lio/codes/frlio/log/pcd
+  save_pcd_stride: 5
+
+param_acc_value_scale: 1.0
+
+param_lidar_type: "LIDAR_TYPE_newercollege_ouster_OS1"
+param_detect_range: 200.0
+param_detect_blind: 4.0
+
+flg_extrinsic_bwtween_l_i_use_rot: true
+# extrinsic_rot_l_i:
+# extrinsic_quat_l_i:  # 顺序 x y z w
+# extrinsic_trans_l_i:
+# extrinsic_rot_l_i: [1, 0, 0,
+#                   0, 1, 0,
+#                   0, 0, 1]
+# extrinsic_quat_l_i: [ 0, 0, 0, 1] # 顺序 x y z w
+# extrinsic_trans_l_i: [ 0.04165, 0.02326, -0.0284]
+extrinsic_rot_i_l: [1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0]
+# extrinsic_quat_i_l: [ 0.0, 0.0, 0.0, -1.0] # 顺序 x y z w
+extrinsic_trans_i_l: [-0.0325, -0.0335, 0.007]
+
+# imu_noise:
+#   acc_std: 0.03
+#   gyr_std: 0.03
+#   ba_std: 0.003
+#   bg_std: 0.003
+# imu_noise:
+#   acc_std: 0.05
+#   gyr_std: 0.05
+#   ba_std: 0.005
+#   bg_std: 0.005
+imu_noise:
+  acc_std: 0.24
+  gyr_std: 0.07
+  ba_std: 0.008
+  bg_std: 0.002
+# imu_noise:
+#   acc_std: 0.5
+#   gyr_std: 0.5
+#   ba_std: 0.05
+#   bg_std: 0.05
+# imu_noise:
+#   acc_std: 1
+#   gyr_std: 1
+#   ba_std: 0.1
+#   bg_std: 0.1
+

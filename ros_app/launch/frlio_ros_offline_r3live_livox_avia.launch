@@ -1,0 +1,13 @@
+<launch>
+	<arg name="rviz" default="true" />
+	
+    <node pkg="frlio" type="frlio_ros_offline_evaluate" name="frlio_ros_offline_evaluate" 
+		args="	--bag_file /home/apple-pie/SLAM/fr-lio/dataset/hkust_campus_seq_00.bag
+				--system_dir /home/apple-pie/SLAM/fr-lio/codes/frlio/src/
+				--evaluate_dir /home/apple-pie/SLAM/fr-lio/dataset/
+				--dataset_base_dir /home/apple-pie/SLAM/fr-lio/dataset/
+				--sensor_config_file /home/apple-pie/SLAM/fr-lio/codes/frlio/config/r3live_livox_avia.yaml" output="screen"/> 
+	<group if="$(arg rviz)">
+		<node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(dirname)/rviz_config.rviz" />
+	</group>
+</launch> 

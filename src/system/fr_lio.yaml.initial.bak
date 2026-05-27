@@ -1,0 +1,54 @@
+param_flg_auto_subframe_num_analysis: true
+param_flg_auto_imu_noise_analysis: true
+param_max_subframe_num: 100
+param_min_subframe_num: 1
+# param_max_imu_acc_noise_inc: 2.0
+# param_max_imu_gyr_noise_inc: 2.0
+param_max_imu_acc_noise_inc: 1.0
+param_max_imu_gyr_noise_inc: 0.5
+param_high_dynamic_ratio_thres: 0.45
+param_high_dynamic_q_scale: 0.8
+
+param_flg_residual_gating: true
+param_residual_gate_base: 0.6
+param_residual_gate_range_scale: 0.03
+param_residual_gate_dynamic_gain: 1.5
+
+param_flg_use_smooth: true # true: 系统会进行 平滑操作； false: 系统按常规的LIO运行，只是按照 param_max_subframe_num 进行了点云细分；
+param_smooth_iteration_num: 2
+param_thres_degrade_pos: 0.000001
+param_thres_degrade_ang: 0.000001
+
+param_min_point_num_for_registration: 2
+param_min_point_num_for_downsample: 50
+param_max_iteration_num_max: 20
+param_max_rematch_num_max: 10
+# param_max_iteration_num_min: 10
+# param_max_rematch_num_min: 5
+param_max_iteration_num_min: 5
+param_max_rematch_num_min: 3
+param_max_pt_searched_num: 5
+param_min_pt_searched_num: 3
+# param_angle_converage_thres: 0.000000000001
+# param_position_converage_thres: 0.00000000001
+param_angle_converage_thres: 0.01
+param_position_converage_thres: 0.00015
+
+param_gravity_value: 9.80665
+# param_gravity_value: 9.81
+
+param_point_filter_num: 1
+param_lidar_points_downsample_resolution: 0.25
+
+#imu
+param_initialization_method: 0
+param_static_initialize_time: 0.5
+param_flg_estimate_imu_noise: true
+
+param_flg_downsample_lidar_points_before_split: false
+
+#ikdtree
+param_ikdtree_cube_len: 500
+
+param_pos_error_thres: 0.001
+param_ang_error_thres: 0.005

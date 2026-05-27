@@ -1,0 +1,23 @@
+<launch>
+	<arg name="rviz" default="true" />
+	<arg name="bag_file" default="/home/apple-pie/SLAM/fr-lio/dataset/newer_college/os0/math_hard/2021-04-07-13-58-54_0-math-hard.bag" />
+	<arg name="dataset_base_dir" default="/home/apple-pie/SLAM/fr-lio/dataset" />
+	<arg name="evaluate_dir" default="/home/apple-pie/SLAM/fr-lio/tmp_eval/benchmark_results/trajectories/frlio/" />
+	<arg name="system_dir" default="/home/apple-pie/SLAM/fr-lio/codes/frlio/src" />
+	<arg name="sensor_config_file" default="/home/apple-pie/SLAM/fr-lio/codes/frlio/config/newercollege_ouster_OS0.yaml" />
+
+	<node pkg="frlio" type="frlio_ros_offline_evaluate" name="frlio_ros_offline_evaluate"
+		args="--bag_file $(arg bag_file)
+			--dataset_base_dir $(arg dataset_base_dir)
+			--evaluate_dir $(arg evaluate_dir)
+			--system_dir $(arg system_dir)
+			--sensor_config_file $(arg sensor_config_file)"
+		output="screen" />
+
+	<group if="$(arg rviz)">
+		<node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(dirname)/rviz_config.rviz" />
+	</group>
+</launch>
+
+<!-- /media/zas/zxy14/dataset/newer_college_dataset/2020-ouster-os1-64-realsense/05_quad_with_dynamics/rosbag/rooster_2020-07-10-09-13-52.bag -->
+<!-- /media/zas/zxy14/dataset/newer_college_dataset/2020-ouster-os1-64-realsense/06_dynamic_spinning/rosbag/rooster_2020-07-10-09-23-18_0-001.bag -->

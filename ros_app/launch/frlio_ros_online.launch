@@ -1,0 +1,14 @@
+<launch>
+	<arg name="rviz" default="true" />
+	<arg name="sensor_config_file" default="/home/apple-pie/SLAM/fr-lio/codes/frlio/config/labs_livox_avia.yaml" />
+	<arg name="rviz_config" default="$(dirname)/../src/rviz_config.rviz" />
+	
+    <node pkg="frlio" type="frlio_ros_online_exec" name="frlio_ros_online" 
+		args="	--my_log_dir /home/apple-pie/SLAM/fr-lio/codes/frlio/log
+				--my_debug_dir /home/apple-pie/SLAM/fr-lio/codes/frlio/debug/
+				--system_dir /home/apple-pie/SLAM/fr-lio/codes/frlio/src/
+				--sensor_config_file $(arg sensor_config_file)" output="screen"/> 
+	<group if="$(arg rviz)">
+		<node launch-prefix="nice" pkg="rviz" type="rviz" name="frlio" args="-d $(arg rviz_config)" />
+	</group>
+</launch> 
